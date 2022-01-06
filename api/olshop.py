@@ -547,11 +547,11 @@ def search(keyword) -> dict:
 	shp.browser.quit()
 	result += shp.get_result()
 	sleep(2)
-	laz = LazadaScrape(keyword)
-	laz.search_result()
-	laz.browser.quit()
-	result += laz.get_result()
-	sleep(2)
+	# laz = LazadaScrape(keyword)
+	# laz.search_result()
+	# laz.browser.quit()
+	# result += laz.get_result()
+	# sleep(2)
 
 	# clean data
 	# cleaned_data = clean_data(result)
