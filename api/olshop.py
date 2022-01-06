@@ -33,7 +33,9 @@ class AmazonScrape:
 		chrome_options.add_argument('--disable-infobars')
 		chrome_options.add_argument('start-maximized')
 		chrome_options.add_argument("--headless")
-		chrome_options.add_argument("--log-level=0")
+		chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
+
 
 		self.browser = webdriver.Chrome(
 			executable_path=os.environ['CHROME_WEBDRIVER'],
@@ -160,7 +162,8 @@ class LazadaScrape:
         chrome_options.add_argument('--disable-infobars')
         chrome_options.add_argument('start-maximized')
         chrome_options.add_argument("--headless")
-        chrome_options.add_argument("--log-level=0")
+        chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
 
         self.browser = webdriver.Chrome(
 			executable_path=os.environ['CHROME_WEBDRIVER'],
@@ -316,7 +319,8 @@ class ShopeeScrape:
 		chrome_options.add_argument('--disable-infobars')
 		chrome_options.add_argument('start-maximized')
 		chrome_options.add_argument("--headless")
-		chrome_options.add_argument("--log-level=0")
+		chrome_options.add_argument("--no-sandbox")
+        chrome_options.add_argument("--disable-dev-shm-usage")
 
 		self.browser = webdriver.Chrome(
 			executable_path=os.environ.get('CHROME_WEBDRIVER'),
