@@ -137,9 +137,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # CORS
 
-CORS_ALLOWED_ORIGINS = [
-    "https://127.0.0.1:3000",
-    "https://winshopping.netlify.app",
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "https://127.0.0.1:3000",
+#     "winshopping.netlify.app",
+# ]
 
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
