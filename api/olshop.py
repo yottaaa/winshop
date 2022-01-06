@@ -114,7 +114,7 @@ class AmazonScrape:
 					# get the average ratings
 					r_avg = ratings_el[0].attrs['aria-label'].split()[0]
 					if self.check_float(r_avg) == True:
-						product_ratings_avg = r_avg
+						product_ratings_avg = float(r_avg)
 					# get the ratings count
 					r_count = ratings_el[1].attrs['aria-label'].replace(',','')
 					product_ratings_count = self.convert_ratings_count_int(r_count)
@@ -142,8 +142,8 @@ class AmazonScrape:
 						'name': product_name,
 						'img_url': product_img,
 						'link': product_link,
-						'ratings_avg': float(product_ratings_avg),
-						'ratings_count': int(product_ratings_count),
+						'ratings_avg': product_ratings_avg,
+						'ratings_count': product_ratings_count,
 						'price': product_price,
 						'currency': product_price_currency,
 						'source': self.base_url
