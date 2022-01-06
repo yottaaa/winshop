@@ -64,6 +64,20 @@ class AmazonScrape:
 
 		return False
 
+	# convert ratings count to int
+	def convert_ratings_count_int(self, ratings_count) -> int:
+		try:
+			remove_str = {'ratings':'','.':'','K':'00'}
+            
+			for k,v in remove_str.items():
+				ratings_count = ratings_count.replace(k,v)
+            
+			return int(ratings_count)
+		except ValueError:
+			return 0
+		
+		return 0
+
 	def search_result(self):
 		product_img = ''
 		product_link = ''
@@ -103,7 +117,7 @@ class AmazonScrape:
 						product_ratings_avg = r_avg
 					# get the ratings count
 					r_count = ratings_el[1].attrs['aria-label'].replace(',','')
-					product_ratings_count = r_count
+					product_ratings_count = self.convert_ratings_count_int(r_count)
 
 
 			# get the price
